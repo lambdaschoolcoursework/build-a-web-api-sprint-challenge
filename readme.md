@@ -6,7 +6,7 @@ I learned a ton, but two things are: needing to use express.json() so that Expre
 
 **Describe Middleware.**
 
-Middleware increases the functionality of Express.
+Middleware extends the functionality of Express.
 
 **Describe a Resource.**
 
@@ -14,7 +14,7 @@ A resource refers to the URI that is accessed via HTTP methods such as post, get
 
 **What can an API return to help clients know if a request was successful?**
 
-The API can return different status codes that mean different things.
+The API can return a status code of 200 or similar for different meanings.
 
 **How can we partition our application?**
 

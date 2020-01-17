@@ -10,14 +10,14 @@ router.post('/', validateProject, (request, response) => {
         .catch(err => response.status(500).json({message: 'error creating project'}))
 });
 
-// get all projects
+// fetch all projects
 router.get('/', (request, response) => {
     model.get()
         .then(res => response.status(200).json(res))
         .catch(err => response.status(500).json({message: 'error fetching projects'}))
 });
 
-// get project's actions
+// fetch project's actions
 router.get('/:id/actions', validateProjectId, (request, response) => {
     model.getProjectActions(request.params.id)
         .then(res => response.status(200).json(res))
@@ -32,7 +32,7 @@ router.put('/:id', validateProjectId, (request, response) => {
 });
 
 // delete project
-router.delete('/:id', (request, response) => {
+router.delete('/:id', validateProjectId, (request, response) => {
     model.remove(request.params.id)
         .then(res => response.status(500).json(res))
         .catch(err => response.status(200).json({message: 'error deleting project'}));
